@@ -9,12 +9,12 @@ class Transfer
     @status = "pending"
   end
 
-  def bvalid?
+  def valid?
     @sender.valid? && @receiver.valid? ? true : false
   end
 
   def execute_transaction
-    if self.bvalid? && @status == "pending"
+    if self.valid? && @status == "pending"
       @sender.balance -= @amount
       @receiver.balance += @amount
       @status = "complete"
