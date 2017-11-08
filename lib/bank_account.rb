@@ -13,7 +13,7 @@ class BankAccount
   end
 
   def deposit(amt)
-    self.display_balance += amt
+    @balance += amt
   end
 
   def valid?
